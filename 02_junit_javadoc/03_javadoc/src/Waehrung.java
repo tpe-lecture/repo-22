@@ -35,7 +35,7 @@ public class Waehrung {
     public int getKurs() {
         return kurs;
     }
-    
+
     // TODO: JavaDoc
     public String getName() {
         return name;

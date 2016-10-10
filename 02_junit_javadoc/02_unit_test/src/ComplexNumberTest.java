@@ -84,8 +84,12 @@ public class ComplexNumberTest {
         // (3   +  5i) --conj--> (3   + -5i)
         // (-2  + -4i) --conj--> (-2  + 4i)
 
-        // TODO: Test schreiben
-    }
+        ComplexNumber a = new ComplexNumber(3, 5);
+        ComplexNumber b = new ComplexNumber(-2, -4);
+
+        assertEquals(new ComplexNumber(3, -5), a.conjugate());
+        assertEquals(new ComplexNumber(-2, 4), b.conjugate());
+     }
 
     /**
      * Testet die Berechnung des Betrages.

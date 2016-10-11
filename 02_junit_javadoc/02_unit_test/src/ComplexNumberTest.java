@@ -50,15 +50,14 @@ public class ComplexNumberTest {
         // (2 + -4i) * 4         = (  8 + -16i)
 
         ComplexNumber a = new ComplexNumber(2, -4);
-        ComplexNumber b = new ComplexNumber(-3, -5);
+        ComplexNumber b = new ComplexNumber(-3, 5);
         ComplexNumber c = new ComplexNumber(2, 5);
         ComplexNumber d = new ComplexNumber(3, 7);
         ComplexNumber e = new ComplexNumber(2, -4);
-        ComplexNumber f = new ComplexNumber(4);
 
         assertEquals(new ComplexNumber(14, 22), a.multiply(b));
         assertEquals(new ComplexNumber(-29, 29), c.multiply(d));
-        assertEquals(new ComplexNumber(-29, 29), e.multiply(f));
+        assertEquals(new ComplexNumber(8, -16), e.multiply(4));
     }
 
     /**
@@ -112,8 +111,8 @@ public class ComplexNumberTest {
         ComplexNumber a = new ComplexNumber(3, -4);
         ComplexNumber b = new ComplexNumber(0, 3);
 
-        assertEquals(new ComplexNumber(5), a.abs());
-        assertEquals(new ComplexNumber(3), b.abs());
+        assertEquals(5.0, a.abs(),0);
+        assertEquals(3.0, b.abs(),0);
     }
 
     /**
@@ -133,7 +132,7 @@ public class ComplexNumberTest {
         assertEquals(new ComplexNumber(2, -4), a.power(1));
         assertEquals(a.multiply(a), a.power(2));
         assertEquals(a.multiply(a.multiply(a)), a.power(3));
-        assertEquals(a.multiply(a.multiply(a.multiply(a.multiply(a.multiply(a.multiply(a.multiply(a))))))), a.power(6));
+        assertEquals(new ComplexNumber(7488, -2816), a.power(6));
     }
 }
 

@@ -1,4 +1,4 @@
-
+package Bestellungen;
 
 /**
  * Ein Kunde der Firma.

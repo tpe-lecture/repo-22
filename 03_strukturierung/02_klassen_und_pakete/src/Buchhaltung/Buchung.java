@@ -1,4 +1,4 @@
-
+package Buchhaltung;
 
 /**
  * Eine Buchung auf einem Konto.

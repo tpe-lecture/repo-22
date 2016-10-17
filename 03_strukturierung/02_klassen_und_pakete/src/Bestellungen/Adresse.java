@@ -1,4 +1,4 @@
-
+package Bestellungen;
 
 /**
  * Adresse eines Geschäftspartners.

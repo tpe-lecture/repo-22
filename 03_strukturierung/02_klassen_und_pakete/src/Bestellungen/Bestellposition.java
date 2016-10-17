@@ -1,3 +1,4 @@
+package Bestellungen;
 /**
  * Eine Position der Bestellung.
  */

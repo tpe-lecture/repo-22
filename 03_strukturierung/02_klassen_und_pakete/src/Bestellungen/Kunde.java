@@ -1,4 +1,4 @@
-package stammdaten.copy;
+package Bestellungen;
 
 /**
  * Ein Kunde der Firma.

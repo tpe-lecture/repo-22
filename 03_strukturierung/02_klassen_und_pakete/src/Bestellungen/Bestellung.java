@@ -1,7 +1,4 @@
-package bestellungen;
-
-import stammdaten.Kunde;
-
+package Bestellungen;
 /**
  * Eine Bestellung.
  */

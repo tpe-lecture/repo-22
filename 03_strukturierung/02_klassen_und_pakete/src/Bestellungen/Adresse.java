@@ -1,4 +1,4 @@
-package stammdaten.copy;
+package Bestellungen;
 
 /**
  * Adresse eines Geschäftspartners.

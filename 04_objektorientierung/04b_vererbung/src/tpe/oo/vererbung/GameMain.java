@@ -2,20 +2,18 @@ package tpe.oo.vererbung;
 
 import java.awt.EventQueue;
 
-import de.smits_net.games.framework.board.MainWindow;
-
-
 /**
  * Hauptklasse des Spiels.
  */
-public class GameMain extends MainWindow{
+public class GameMain {
 // TODO: Von MainWindow ableiten
 
     /**
      * Neues Spiel anlegen.
      */
     public GameMain() {
-        super("Poor Alien", new GameBoard());
+// TODO: Einkommentieren
+//        super("Poor Alien", new GameBoard());
     }
 
     /**

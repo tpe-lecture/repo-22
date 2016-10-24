@@ -1,4 +1,4 @@
-package buchhaltung;
+package Buchhaltung;
 
 /**
  * Sammlung von Konten und Methoden, um Buchungen durchzuführen.

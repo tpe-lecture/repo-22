@@ -8,13 +8,12 @@ import java.awt.Point;
 
 import de.smits_net.games.framework.board.Board;
 import de.smits_net.games.framework.image.ImageBase;
-import de.smits_net.games.framework.sprite.Direction;
 import de.smits_net.games.framework.sprite.Sprite;
 
 /**
  * Spielfeld.
  */
-public class GameBoard extends Board {
+public class GameBoard {
 // TODO: Von Board ableiten
 
     /** Alien, das durch das Bild läuft. */
@@ -26,26 +25,19 @@ public class GameBoard extends Board {
     /** Hintergrundbild. */
     private Image background;
 
-    private Sprite asteroidzwei;
-
     /**
      * Erzeugt ein neues Board.
      */
     public GameBoard() {
 // TODO: Einkommentieren
-        // neues Spielfeld anlegen
-        super(10, new Dimension(800, 600), Color.BLACK);
-
-        // Hintergrundbild laden
-        background = ImageBase.loadImage("assets/background");
-
+//        // neues Spielfeld anlegen
+//        super(10, new Dimension(800, 600), Color.BLACK);
+//
+//        // Hintergrundbild laden
+//        background = ImageBase.loadImage("assets/background");
+//
 
         // TODO: Alien und Asteroid anlegen und positionieren
-
-        alien = new AlienSprite(this,new Point(200,500));
-        asteroid = new Asteroid(this,new Point(50,500),2.0,Direction.NORTH);
-        asteroidzwei = new Asteroid(this,new Point(-80,500), 0.3 ,Direction.WEST);
-
     }
 
     /**
@@ -62,9 +54,6 @@ public class GameBoard extends Board {
      */
     public void drawGame(Graphics g) {
         // TODO: Alle Objekte zeichnen
-        alien.draw(g);
-        asteroid.draw(g);
-        asteroidzwei.draw(g);
     }
 
     /**
@@ -76,15 +65,12 @@ public class GameBoard extends Board {
     public boolean updateGame() {
 
         // TODO: Die Objekte bewegen
-        alien.move();
-        asteroid.move();
-        asteroidzwei.move();
 
-
+        // Kollision erkennen
 // TODO: Einkommentieren
-        if (((alien.intersects(asteroid) && alien.isActive()))||(alien.intersects(asteroidzwei) && alien.isActive())) {
-            alien.explode();
-        }
+//        if (alien.intersects(asteroid) && alien.isActive()) {
+//            alien.explode();
+//        }
 
         return true;
     }

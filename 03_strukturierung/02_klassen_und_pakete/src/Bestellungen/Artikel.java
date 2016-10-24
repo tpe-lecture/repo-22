@@ -1,4 +1,4 @@
-package stammdaten.copy;
+package Bestellungen;
 
 /**
  * Ein Artikel aus dem Angebot der Firma.

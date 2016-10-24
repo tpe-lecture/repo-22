@@ -15,36 +15,4 @@ public class Futterstelle {
             tier[i].fuettern();
         }
     }
-
-
-
-
-
-
-//    /**
-//     * Füttert den Affen.
-//     *
-//     * @param affe Affe, der gefüttert werden soll.
-//     */
-//    public void gibFutter(Affe affe) {
-//        affe.fuettern();
-//    }
-//
-//    /**
-//     * Füttert den Gorilla.
-//     *
-//     * @param gorilla Gorilla, der gefüttert werden soll.
-//     */
-//    public void gibFutter(Gorilla gorilla) {
-//        gorilla.fuettern();
-//    }
-//
-//    /**
-//     * Füttert die Giraffe.
-//     *
-//     * @param giraffe Giraffe, die gefüttert werden soll.
-//     */
-//    public void gibFutter(Giraffe giraffe) {
-//        giraffe.fuettern();
-//    }
 }

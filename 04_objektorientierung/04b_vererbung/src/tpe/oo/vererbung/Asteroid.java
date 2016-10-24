@@ -11,7 +11,7 @@ import de.smits_net.games.framework.sprite.Sprite;
 /**
  * Ein Asteroid.
  */
-public class Asteroid {
+public class Asteroid extends Sprite{
 // TODO: Von Sprite ableiten
 
     /**
@@ -20,10 +20,10 @@ public class Asteroid {
      * @param board das Spielfeld
      * @param startPoint Start-Position
      */
-    public Asteroid(Board board, Point startPoint) {
+    public Asteroid(Board board, Point startPoint, double speed, Direction dir) {
 // TODO: Einkommentieren
-//        super(board, startPoint, BoundaryPolicy.NONE,
-//                new ImagePack(ImageBase.loadImage("assets/asteroid")));
-//        velocity.setVelocity(Direction.NORTHEAST, 0.2);
+        super(board, startPoint, BoundaryPolicy.JUMP_BACK,
+                new ImagePack(ImageBase.loadImage("assets/asteroid")));
+        velocity.setVelocity(dir, speed);  //Direction.NORTH
     }
 }

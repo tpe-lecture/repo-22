@@ -1,4 +1,4 @@
-package bestellungen;
+package bestellungen.copy;
 
 import stammdaten.Kunde;
 

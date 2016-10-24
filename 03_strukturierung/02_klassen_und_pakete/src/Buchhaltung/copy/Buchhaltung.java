@@ -1,4 +1,4 @@
-package buchhaltung;
+package buchhaltung.copy;
 
 /**
  * Sammlung von Konten und Methoden, um Buchungen durchzuführen.

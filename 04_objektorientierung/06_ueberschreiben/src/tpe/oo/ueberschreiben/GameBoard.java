@@ -7,14 +7,16 @@ import java.awt.Point;
 import java.util.Random;
 
 import de.smits_net.games.framework.board.Board;
+import de.smits_net.games.framework.sprite.Direction;
 
 /**
  * Spielfeld.
  */
+@SuppressWarnings("serial")
 public class GameBoard extends Board {
 
     /** Alien, das durch das Bild läuft. */
-    private Alien alien;
+    private Alien [] alienar;
 
     /**
      * Erzeugt ein neues Board.
@@ -23,11 +25,31 @@ public class GameBoard extends Board {
         // neues Spielfeld anlegen
         super(10, new Dimension(400, 400), Color.BLACK);
 
-        // Alien initialisieren
-        alien = new Alien(this, new Point(400, 50 + new Random().nextInt(100)));
 
-        // Alien soll auf Maus-Klicks reagieren
-        addMouseListener(alien);
+        // Alien initialisieren
+        alienar = new Alien[100];
+        for(int i=0; i<alienar.length;i++){
+            switch(i%4)
+            {
+            case 1: {
+                    alienar[i]= new Alien(this, new Point(400 + new Random().nextInt(100)*50, 50 + new Random().nextInt(100)*50),Direction.NORTH);
+                    break;
+                   }
+            case 2: {
+                alienar[i]= new Alien(this, new Point(400 - new Random().nextInt(100)*50, 50 + new Random().nextInt(100)*50),Direction.SOUTHEAST);
+                break;
+               }
+            case 3: {
+                alienar[i]= new Alien(this, new Point(400 + new Random().nextInt(100)*50, 50 + new Random().nextInt(100)*50),Direction.SOUTH);
+                break;
+               }
+            case 0: {
+                alienar[i]= new Alien(this, new Point(400 - new Random().nextInt(100)*50, 50 + new Random().nextInt(100)*50),Direction.NORTHWEST);
+                break;
+               }
+            }
+            addMouseListener(alienar[i]);
+        }
     }
 
     /**
@@ -36,7 +58,10 @@ public class GameBoard extends Board {
     @Override
     public void drawGame(Graphics g) {
         // Alien zeichnen
-        alien.draw(g, this);
+        for(int i=0; i<alienar.length;i++){
+            alienar[i].draw(g);
+        }
+
     }
 
     /**
@@ -44,7 +69,9 @@ public class GameBoard extends Board {
      */
     @Override
     public boolean updateGame() {
-        alien.move();
-        return alien.isVisible();
+        for(int i=0; i<alienar.length;i++){
+            alienar[i].move();
+        }
+        return true;
     }
 }

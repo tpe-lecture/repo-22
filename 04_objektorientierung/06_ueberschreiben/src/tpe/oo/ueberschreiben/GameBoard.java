@@ -88,6 +88,9 @@ public class GameBoard extends Board {
                 return true;
             }
         }
+        for(int u=0; u<alienar.length;u++){
+                alienar[u]=null;
+            }
         return false;
     }
     @Override

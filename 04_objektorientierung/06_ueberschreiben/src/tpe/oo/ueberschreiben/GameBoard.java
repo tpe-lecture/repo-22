@@ -34,7 +34,7 @@ public class GameBoard extends Board {
 
 
         // Alien initialisieren
-        alienar = new Alien[2];
+        alienar = new Alien[300];
         for(int i=0; i<alienar.length;i++){
             switch(i%4)
             {
@@ -85,6 +85,7 @@ public class GameBoard extends Board {
     private boolean checktrue() {
         for(int i=0; i<alienar.length;i++){
             if (alienar[i].isVisible()){
+                System.out.println(i);
                 return true;
             }
         }

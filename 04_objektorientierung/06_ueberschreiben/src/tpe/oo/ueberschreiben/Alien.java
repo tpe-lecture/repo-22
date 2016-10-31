@@ -15,7 +15,7 @@ public class Alien extends AnimatedSprite {
 
     /** Geschwindigkeit des Alien X-Richtung. */
     private static final int ALIEN_SPEED = 3;
-    public static int alien;
+    public static int alien=0;
 
     /**
      * Neues Alien anlegen.
@@ -45,4 +45,5 @@ public class Alien extends AnimatedSprite {
     public void mousePressed(){
         this.explode();
     }
+
 }

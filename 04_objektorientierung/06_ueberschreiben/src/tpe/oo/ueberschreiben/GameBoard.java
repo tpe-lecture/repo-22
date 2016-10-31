@@ -2,8 +2,15 @@ package tpe.oo.ueberschreiben;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.image.ImageObserver;
+import java.text.AttributedCharacterIterator;
 import java.util.Random;
 
 import de.smits_net.games.framework.board.Board;
@@ -27,7 +34,7 @@ public class GameBoard extends Board {
 
 
         // Alien initialisieren
-        alienar = new Alien[100];
+        alienar = new Alien[2];
         for(int i=0; i<alienar.length;i++){
             switch(i%4)
             {
@@ -72,6 +79,19 @@ public class GameBoard extends Board {
         for(int i=0; i<alienar.length;i++){
             alienar[i].move();
         }
-        return true;
+        return checktrue();
+    }
+
+    private boolean checktrue() {
+        for(int i=0; i<alienar.length;i++){
+            if (alienar[i].isVisible()){
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
+    protected void drawGameOver(Graphics g) {
+        writeText(g, 170, 200, "game over");
     }
 }

@@ -8,5 +8,6 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/lib/game_framework-javadoc.zip!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="src" path="/07_abstrakte_klassen"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

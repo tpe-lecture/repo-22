@@ -12,6 +12,7 @@ import tpe.oo.factory.figuren.FigurenFactory;
 
 /**
  * Spielfeld.
+ *
  */
 public class GameBoard extends Board {
 

@@ -16,4 +16,12 @@ public class Ninja extends Figur {
     public Ninja(Board board) {
         super(board, new AnimatedImage(50, 8, "assets/ninja.png"));
     }
+    /**
+     *
+     * @param board neu
+     * @param speed neu
+     */
+    public Ninja(Board board, int speed) {
+        super(board, new AnimatedImage(50, 8, "assets/ninja.png"), speed);
+    }
 }

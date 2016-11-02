@@ -17,7 +17,7 @@ import tpe.oo.factory.figuren.FigurenFactory;
 public class GameBoard extends Board {
 
     /** Figur, die durch das Bild läuft. */
-    private Figur[] figur = new Figur[10];
+    private Figur[] figur = new Figur[40];
     FigurenFactory ff = new FigurenFactory();
 
     /**
@@ -25,7 +25,7 @@ public class GameBoard extends Board {
      */
     public GameBoard() {
         // neues Spielfeld anlegen
-        super(10, new Dimension(400, 400), Color.BLACK);
+        super(10, new Dimension(800, 400), Color.BLACK);
 
         // Figuren erzeugen
         for (int i = 0; i < figur.length; i++) {

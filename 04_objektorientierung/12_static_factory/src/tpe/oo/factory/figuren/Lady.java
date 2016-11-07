@@ -22,6 +22,7 @@ public class Lady extends Figur {
      * @param speed neu
      */
     protected Lady(Board board, int speed) {
-        super(board, new AnimatedImage(50, 8, "assets/lady.png"), speed);
+        super(board, new AnimatedImage(100 / (speed + 1),
+                8, "assets/lady.png"), speed);
     }
 }

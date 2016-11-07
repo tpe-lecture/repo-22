@@ -8,11 +8,11 @@ import java.awt.Point;
 
 import de.smits_net.games.framework.board.Board;
 import de.smits_net.games.framework.image.ImageBase;
-import de.smits_net.games.framework.sprite.Sprite;
 
 /**
  * Spielfeld.
  */
+@SuppressWarnings("serial")
 public class GameBoard extends Board{
 // TODO: Von Board ableiten
 

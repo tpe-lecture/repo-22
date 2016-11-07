@@ -14,6 +14,7 @@ import tpe.oo.factory.figuren.FigurenFactory;
  * Spielfeld.
  *
  */
+@SuppressWarnings("serial")
 public class GameBoard extends Board {
 
     /** Figur, die durch das Bild läuft. */

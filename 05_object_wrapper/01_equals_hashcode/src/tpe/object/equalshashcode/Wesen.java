@@ -6,14 +6,14 @@ package tpe.object.equalshashcode;
 public class Wesen {
 
     /** Name des Wesens. */
-    private String name;
-    
+    protected String name;
+
     /** Stärke des Wesens.  */
-    private int staerke;
+    protected int staerke;
 
     /**
      * Legt ein neues Wesen an.
-     * 
+     *
      * @param name Name des Wesens.
      * @param staerke Stärke des Wesens.
      */
@@ -61,5 +61,5 @@ public class Wesen {
             return false;
         }
         return true;
-    }    
+    }
 }

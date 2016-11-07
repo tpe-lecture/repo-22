@@ -2,8 +2,8 @@
  * Klasse dient als Beispiel für den Coding-Standard und die Namenskonventionen
  * bei Java-Programmen.
  */
-public 
-class 
+public
+class
 CodingStandard {
 
 /*
@@ -20,7 +20,7 @@ private double ZWEITES_Feld;
      * Erstes_Feld: das erste Feld.
      * ZweitesFeld: das zweite Feld.
      */
-    public CodingStandard(int Erstes_Feld, double ZweitesFeld) 
+    public CodingStandard(int Erstes_Feld, double ZweitesFeld)
     {
     this.ERSTES_Feld = Erstes_Feld;    this.ZWEITES_Feld = ZweitesFeld;
     }
@@ -31,14 +31,13 @@ private double ZWEITES_Feld;
      * parameter: Eingabewert für die Methode.
      * gibt einen Wert abhängig von {@code parameter} zurück.
      */
-    public int 
-    Methode_Die_Was_Tut(int Parameter) 
+    public int Methode_Die_Was_Tut(int Parameter)
     {
     int result;
 
     if (Parameter > konstanteMitTOLLEMWert)
-    result = 12;        
-    else 
+    result = 12;
+    else
     {
         result = 13; }
 

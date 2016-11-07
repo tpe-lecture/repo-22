@@ -17,10 +17,10 @@ public class FigurenFactory {
         Random rand = new Random();
         int random = rand.nextInt(100);
         switch (random % 3) {
-            case 0 : return new Lady(g, random / 10);
-            case 1 : return new Ninja(g, random / 10);
-            case 2 : return new Wizard(g, random / 10);
-            default : return new Wizard(g, random / 10);
+            case 0 : return new Lady(g, (random + 10) / 30);
+            case 1 : return new Ninja(g, (random + 10) / 30);
+            case 2 : return new Wizard(g, (random + 10) / 30);
+            default : return new Wizard(g, (random + 10) / 30);
         }
     }
 }

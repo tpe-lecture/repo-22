@@ -22,6 +22,7 @@ public class Wizard extends Figur {
      * @param speed neu
      */
     public Wizard(Board board, int speed) {
-        super(board, new AnimatedImage(50, 8, "assets/wizard.png"), speed);
+        super(board, new AnimatedImage(100 / (speed + 1),
+                8, "assets/wizard.png"), speed);
     }
 }

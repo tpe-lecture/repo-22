@@ -19,6 +19,7 @@ import de.smits_net.games.framework.sprite.Direction;
 /**
  * Spielfeld.
  */
+@SuppressWarnings({ "serial", "unused" })
 public class GameBoard extends Board {
 
     /** Alien, das durch das Bild läuft. */

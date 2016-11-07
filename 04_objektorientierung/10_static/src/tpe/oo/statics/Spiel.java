@@ -16,9 +16,6 @@ public final class Spiel {
      * @param args Kommandozeilen-Argumente.
      */
     public static void main(String[] args) {
-        Wuerfel wuerfel1 = new Wuerfel();
-        Wuerfel wuerfel2 = new Wuerfel();
-
         // 1000 Mal würfeln
         for (int i = 0; i < 1000; i++) {
             Wuerfel.wuerfele();

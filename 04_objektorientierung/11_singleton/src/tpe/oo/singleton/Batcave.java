@@ -9,20 +9,20 @@ public final class Batcave {
     private Batcave() {
         // leer
     }
-    
+
     /**
      * Hauptmethode.
-     * 
+     *
      * @param args Argumente von der Kommandozeile.
      */
     public static void main(String[] args) {
-        Batman batman1 = new Batman();
+        Batman batman1 = Batman.createBatman();
         System.out.println(batman1);
         batman1.umziehen();
         System.out.println(batman1);
         System.out.println();
-        
-        Batman batman2 = new Batman();
-        System.out.println(batman2);        
-    }    
+
+        Batman batman2 = Batman.createBatman();
+        System.out.println(batman2);
+    }
 }

@@ -32,7 +32,7 @@ public class GameBoard extends Board {
         super(10, new Dimension(400, 400), Color.BLACK);
 
         // Alien initialisieren
-        alienar = new Alien[30];
+        alienar = new Alien[300];
         for(int i = 0; i<alienar.length;i++){
             switch(i%4)
             {

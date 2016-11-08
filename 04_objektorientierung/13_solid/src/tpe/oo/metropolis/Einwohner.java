@@ -14,7 +14,7 @@ public abstract class Einwohner {
     public int getEinkommen() {
         return einkommen;
     }
-    private void setEinkommen(int einkommen) {
+    public void setEinkommen(int einkommen) {
         this.einkommen = einkommen;
     }
     public String getName() {

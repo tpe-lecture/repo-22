@@ -12,11 +12,12 @@ public abstract class Mutant extends Einwohner {
         this.setMutation(mutation);
     }
 
-    abstract void kaempfe();
+
     public String getMutation() {
         return mutation;
     }
     private void setMutation(String mutation) {
         this.mutation = mutation;
     }
+    abstract void kaempfe(Superkraft ...superkrafts);
 }

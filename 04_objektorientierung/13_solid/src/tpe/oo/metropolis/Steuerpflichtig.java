@@ -1,5 +1,5 @@
 package tpe.oo.metropolis;
 
-public interface Streuerpflichtig {
+public interface Steuerpflichtig {
     public int zahleSteuern();
 }

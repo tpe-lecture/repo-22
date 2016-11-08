@@ -1,34 +1,60 @@
 package tpe.oo.metropolis;
 
+import java.lang.reflect.Array;
+
 public class Syndikat extends Gruppe{
-    Schurken[] mitglieder = new Schurken[100];
-    int Mitglieder = 0;
+    Schurke[] mitglieder;
+    int mitglnr = 0;
     int einkommen = 0;
-    Syndikat(String name, int einkommen) {
-        super(name, einkommen);
+    int steuernr = -1;
+    Finanzamt fa = null;
+
+    Syndikat(String name, Schurke ... Mitglieder) {
+        super(name, calcEinkommen(Mitglieder));
+        mitglnr=Mitglieder.length;
+        mitglieder = new Schurke[mitglnr];
+        System.arraycopy(Mitglieder, 0, mitglieder, 0, mitglieder.length);
+        fa = Finanzamt.createFA();
+        this. steuernr = fa.addZahler((Steuerpflichtig) this);
     }
 
 
-    public Schurken[] getMitglieder() {
-        return mitglieder;
-    }
-
-    public void addMitglied(Schurken neuerBoesewicht) {
-        if(Mitglieder<=100){
-        this.mitglieder[Mitglieder]= neuerBoesewicht;
-        this.Mitglieder++;
-        this.einkommen += neuerBoesewicht.getEinkommen();
-        }else{
-            System.out.println("voll");
+    private static int calcEinkommen(Schurke[] Mitglieder) {
+        int add = 0;
+        for(int i=0; i < Mitglieder.length; i++){
+            add += Mitglieder[i].getEinkommen();
         }
+        return add;
+    }
+
+
+    public void getMitglieder() {
+        System.out.print("Mitglieder von " + getName() + ": ");
+        for(int i=0; i < mitglieder.length; i++){
+            System.out.print(mitglieder[i].getName()+ ", ");
+        }
+        System.out.println("");
+    }
+
+    public void addMitglied(Schurke neuerBoesewicht) {
+
+        Object newArray = Array.newInstance(mitglieder.getClass().getComponentType(), Array.getLength(mitglieder)+1); // +2
+        System.arraycopy(mitglieder, 0, newArray, 0, mitglieder.length);
+        mitglieder = (Schurke[]) newArray;
+        mitglieder[mitglnr] = neuerBoesewicht;
+        ++mitglnr;
+        this.einkommen += neuerBoesewicht.getEinkommen();
+     }
+
+    public int getEinkommen() {
+        this.einkommen = calcEinkommen(mitglieder);
+        return einkommen;
     }
 
 
 
     @Override
     public int zahleSteuern() {
-        return 0;
+        return Steuerberater.Betrag(this);
     }
-
-
 }

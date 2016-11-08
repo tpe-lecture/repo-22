@@ -1,6 +1,6 @@
 package tpe.oo.metropolis;
 
-public abstract class Gruppe implements Streuerpflichtig{
+public abstract class Gruppe implements Steuerpflichtig{
     String name;
     int einkommen;
     Gruppe(String name, int einkommen){

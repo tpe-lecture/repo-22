@@ -1,5 +1,13 @@
 package tpe.oo.metropolis;
-
+/**
+ * Gibt an, dass ein Einwohner steuerpflichtig.
+ *
+ */
 public interface Steuerpflichtig {
-    public int zahleSteuern();
+
+    /**
+     * ein Steuerzahler muss Steuern zahlen.
+     * @return Steuern
+     */
+    int zahleSteuern();
 }

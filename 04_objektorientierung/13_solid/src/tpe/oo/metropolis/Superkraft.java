@@ -1,12 +1,32 @@
 package tpe.oo.metropolis;
 
-
+/**
+ * Eine Superkraft die auch die Schwäche von Schurken angibt.
+ *
+ */
 public class Superkraft {
     String name;
-    Superkraft(String name){
-        this.name=name;
+
+    /**
+     * @param name Name der Superkraft.
+     */
+    Superkraft(String name) {
+        this.name = name;
     }
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
+
+    /**
+     * Entscheidet wann zwei Superkräfte gleich sind.
+     * @param obj Superkraft
+     * @return gleich?
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

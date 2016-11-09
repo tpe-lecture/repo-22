@@ -1,41 +1,67 @@
 package tpe.oo.metropolis;
 
-
-public class Finanzamt {
-    private Finanzamt(){
+/**
+ * Singleton Finanzamt.
+ *
+ */
+public final class Finanzamt {
+    /**
+     * privater Konstruktor.
+     */
+    private Finanzamt() {
     }
 
-    public static final Finanzamt Instance = new Finanzamt();
+    /**
+     * die einzige Instanz des Finanzamts.
+     */
+    public static final Finanzamt INSTANCE = new Finanzamt();
+
+    /**
+     * Gibt die einzige Instanz des Finanzamts zurück.
+     * @return Finanzamt
+     */
     public static Finanzamt createFA() {
-            return Instance;
+        return INSTANCE;
     }
 
-    Steuerpflichtig[] Steuer = new Steuerpflichtig[100];
-    int pflichtige=0;
+    Steuerpflichtig[] steuer = new Steuerpflichtig[100];
+    int pflichtige = 0;
+
+    /**
+     * Lässt die Steuern aller Steurpflichtigen Einwohner zurück.
+     * @return Steuern
+     */
     public int steuernausgeben() {
-        int Est=0;
-        for(int i = 0; i<pflichtige; i++){
-            Est += Steuer[i].zahleSteuern();
+        int alleSteuern = 0;
+        for (int i = 0; i < pflichtige; i++) {
+            alleSteuern += steuer[i].zahleSteuern();
         }
-        return Est;
+        return alleSteuern;
     }
 
-
-    public int addZahler(Steuerpflichtig neuerZahler) {
-        if(pflichtige<=100){
-            Steuer[pflichtige]= neuerZahler;
+    /**
+     * Fügt einen neuen Steuerzahler hinzu.
+     * @param neuerZahler der neue Steuerzahler
+     */
+    public void addZahler(Steuerpflichtig neuerZahler) {
+        if (pflichtige <= 100) {
+            steuer[pflichtige] = neuerZahler;
             pflichtige++;
-            return pflichtige;
-         }else{
+        }
+        else {
             System.out.println("Steuer voll");
-            return -1;
-         }
-     }
+        }
+    }
 
-    public int calcSteuern(Steuerpflichtig zahler){
+    /**
+     * Berechnet die Steuern für einen bestimmten Steuerzahler.
+     * @param zahler Steuerzahler
+     * @return Steuern
+     */
+    public int calcSteuern(Steuerpflichtig zahler) {
         return zahler.zahleSteuern();
     }
 
- }
+}
 
 

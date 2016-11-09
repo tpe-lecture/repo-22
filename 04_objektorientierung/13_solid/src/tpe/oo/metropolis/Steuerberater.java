@@ -4,13 +4,18 @@ public class Steuerberater {
 
     public static int Betrag(Steuerpflichtig sp){
         if (sp instanceof Gruppe ){
-//            System.out.println("Steuerberater: "+((Gruppe) sp).getName()+" zahlt steuern");
+            if (sp instanceof Personengesellschaft){
+                int perSteu = ((Personengesellschaft) sp).getEinkommen()/ 100 * 15;
+                if (perSteu > 800){
+                    return perSteu - 800;
+                }
+                    return 0;
+            }else{
             return ((Gruppe) sp).getEinkommen()/ 100 * 15;
+            }
         }else if(sp instanceof Buerger || sp instanceof Schurke){
-//            System.out.println("Steuerberater: "+((Einwohner) sp).getName()+" zahlt steuern");
             return EKS(((Einwohner) sp).getEinkommen());
         }else {
-//            System.out.println("Steuerberater: keine Steuern");
             return 0;
         }
     }

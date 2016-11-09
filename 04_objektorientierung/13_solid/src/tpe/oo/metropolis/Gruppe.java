@@ -23,4 +23,6 @@ public abstract class Gruppe implements Steuerpflichtig{
         this.name = name;
     }
     abstract public int zahleSteuern();
+    public abstract void getMitglieder();
+
 }

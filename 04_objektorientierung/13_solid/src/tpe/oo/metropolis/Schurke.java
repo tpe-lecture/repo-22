@@ -1,7 +1,7 @@
 package tpe.oo.metropolis;
 
 public class Schurke extends Mutant implements Steuerpflichtig{
-    Superkraft Schwaeche;
+    final Superkraft Schwaeche;
 
     Schurke(String name, String Mutation, int Einkommen, Superkraft Schwaeche) {
         super(name, Mutation, Einkommen);
@@ -9,16 +9,6 @@ public class Schurke extends Mutant implements Steuerpflichtig{
         Finanzamt fa = Finanzamt.createFA();
         fa.addZahler((Steuerpflichtig) this);
        }
-
-    boolean gewinnt(Superkraft ...superkrafts) {
-        for(int i = 0; i < superkrafts.length; i++){
-            if (superkrafts[i].equals(Schwaeche)){
-                return false;
-            }
-        }
-        return true;
-    }
-
 
     public Superkraft getSchwaeche() {
         return Schwaeche;
@@ -33,9 +23,22 @@ public class Schurke extends Mutant implements Steuerpflichtig{
     void kaempfe(Superkraft ...superkrafts) {
         if(gewinnt(superkrafts)){
             System.out.println(getName() + " gewinnt! Schwäche nicht erkannt.");
-        }else{
+        } else {
             System.out.println("Gegener gewinnt! Schwäche erkannt.");
         }
+    }
+
+    boolean gewinnt(Superkraft ...superkrafts) {
+        for(int i = 0; i < superkrafts.length; i++){
+            if (superkrafts[i].equals(Schwaeche)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void kaempfe(Superheld held) {
+            kaempfe(held.getSuperkraefte());
     }
 
 }

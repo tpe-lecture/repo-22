@@ -29,4 +29,10 @@ public class Superkraft {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "[" + name + "]";
+    }
+
 }

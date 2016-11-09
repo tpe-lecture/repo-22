@@ -23,12 +23,9 @@ public class Metropolis {
 
         Schurke magneto = new Schurke("Magneto","Metal manipulation", 10000, new Superkraft("Plastik"));
 
-        System.out.println("Magneto kämpft gegen 2 Superhelden");
-        magneto.kaempfe(new Superkraft("Schwert"));
-        magneto.kaempfe(new Superkraft("Plastik"));
-        System.out.println("");
 
-        Schurke mystique = new Schurke("Mystique", "Gestaltwandlung", 1000000, new Superkraft("Pistole"));
+
+        Schurke mystique = new Schurke("Mystique", "Gestaltwandlung", 1000000, new Superkraft("böse schauen"));
         Syndikat s = new Syndikat("Die Fantanstischen 5", magneto, mystique);
         s.getMitglieder();
         System.out.println(s.getName()+ " zahlt " + fm.calcSteuern(s) + " von: " + s.getEinkommen());
@@ -40,6 +37,37 @@ public class Metropolis {
         System.out.println(s.getName()+ " zahlt " + fm.calcSteuern(s) + " von: " + s.getEinkommen());
 
         System.out.println("\n" + fm.steuernausgeben() + "$ Steuern eingesammelt" + "\n");
-    }
 
+
+        Personengesellschaft test = new Personengesellschaft("Test", 5,einarr[2]);
+        System.out.println("neues Unternehmen" + test.getName());
+        test.addMitglied(einarr[1]);
+        test.getMitglieder();
+        System.out.println(test.getName() + " Einkommen: " + test.getEinkommen());
+        System.out.println("Steuern: " + fm.calcSteuern(test));
+        test.setEinkommen(5400);
+        System.out.println(test.getName() + " Einkommen: " + test.getEinkommen());
+        System.out.println("Steuern: " + fm.calcSteuern(test));
+        test.setEinkommen(1000000);
+        System.out.println(test.getName() + " Einkommen: " + test.getEinkommen());
+        System.out.println("Steuern: " + fm.calcSteuern(test));
+
+        System.out.println("\n" + fm.steuernausgeben() + "$ Steuern eingesammelt" + "\n");
+
+        Superheld ProfX = new Superheld("Proffessor X", "Mensch",
+                new Superkraft("böse schauen"), new Superkraft("böse schauen"));
+
+        System.out.println("Magneto kämpft gegen 2 Superhelden");
+        magneto.kaempfe(new Superkraft("Schwert"));
+        magneto.kaempfe(ProfX);
+        System.out.println("");
+
+        System.out.println("Mystique kämpft gegen 2 Superhelden");
+        mystique.kaempfe(new Superkraft("Schwert"));
+        mystique.kaempfe(ProfX);
+        System.out.println("");
+
+        System.out.println(ProfX.superkraefte());
+
+    }
 }

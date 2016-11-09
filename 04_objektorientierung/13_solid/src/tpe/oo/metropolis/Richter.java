@@ -18,9 +18,9 @@ public class Richter extends Menschen {
 
     public void verurteilen(Schurke boesewicht){
         if (schuldig()){
-            System.out.println(boesewicht.getName()+" ist schuldig!");
-        }else{
             System.out.println(boesewicht.getName()+" ist nicht schuldig!");
+        }else{
+            System.out.println(boesewicht.getName()+" ist schuldig!");
         }
     }
 

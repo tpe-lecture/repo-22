@@ -69,5 +69,13 @@ public class Metropolis {
 
         System.out.println(ProfX.superkraefte());
 
+        Richter hold = new Richter("Alexander Hold", 5, true);
+        hold.verurteilen(magneto);
+        Richter salesch = new Richter("Barbara Salesch", 100, false);
+        salesch.verurteilen(magneto);
+        salesch.setKorrupt(true);
+        salesch.verurteilen(magneto);
+
+
     }
 }

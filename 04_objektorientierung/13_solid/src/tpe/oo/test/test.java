@@ -26,7 +26,6 @@ public class Test {
     public void eks() {
         Steuerberater sb = new Steuerberater();
 
-
         assertEquals(800, sb.testeks(10000));
         assertEquals(1600, sb.testeks(20000));
         assertEquals(3100, sb.testeks(30000));

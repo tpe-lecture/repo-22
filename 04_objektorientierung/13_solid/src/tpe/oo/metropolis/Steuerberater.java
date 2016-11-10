@@ -10,20 +10,20 @@ public class Steuerberater {
      * @return Betrag der Steuern
      */
     public static int betrag(Steuerpflichtig sp) {
-        if (sp instanceof Gruppe) {
-            if (sp instanceof Personengesellschaft) {
-                int perSteu = ((Personengesellschaft) sp).getEinkommen()
+        if (sp instanceof Gruppe) {                                         //Gruppen zahlen keine EKS
+            if (sp instanceof Personengesellschaft) {                           //Persges. erhalten Steuererleicterung
+                int perSteu = ((Personengesellschaft) sp).getEinkommen()        //eingenltiche Steuern
                         / 100 * 15;
-                if (perSteu > 800) {
+                if (perSteu > 800) {                                            //negative Steuern ausschließen
                     return perSteu - 800;
                 }
                 return 0;
             }
             else {
-                return ((Gruppe) sp).getEinkommen() / 100 * 15;
+                return ((Gruppe) sp).getEinkommen() / 100 * 15;                 //andere Gruppenformen
             }
         }
-        else if (sp instanceof Buerger || sp instanceof Schurke) {
+        else if (sp instanceof Buerger || sp instanceof Schurke) {              //EKS
             return eks(((Einwohner) sp).getEinkommen());
         }
         else {
@@ -39,20 +39,20 @@ public class Steuerberater {
     private static int eks(int einkommen) {
         int rest = einkommen;
         int abgaben = 0;
-        if (rest > 20000) {
-            if (rest > 60000) {
-                if (rest > 120000) {
-                    abgaben += (rest - 120000) / 100 * 40;
+        if (rest > 20000) {                                 //einkommen über 20k
+            if (rest > 60000) {                                 //über 60k
+                if (rest > 120000) {                                //über 120k
+                    abgaben += (rest - 120000) / 100 * 40;          //40% auf alles über 120k
                     rest = 120000;
                 }
-                abgaben += (rest - 60000) / 100 * 25;
+                abgaben += (rest - 60000) / 100 * 25;               //25% auf alles über 60k
                 rest = 60000;
             }
-            abgaben += (rest - 20000) / 100 * 15;
-            abgaben += 1600;
+            abgaben += (rest - 20000) / 100 * 15;                   //15% auf alles über 20k
+            abgaben += 1600;                                        //8% auf alles unter 20k
         }
         else {
-            abgaben = rest / 100 * 8;
+            abgaben = rest / 100 * 8;                               //8% auf alles unter 20k
         }
         return abgaben;
     }

@@ -1,12 +1,10 @@
 package tpe.oo.metropolis;
 
-import java.lang.reflect.Array;
-
 /**
  * Unternehmen, die Steuern zahlen und von Einwohnern geführt werden.
  */
 public abstract class Unternehmen extends Gruppe implements Steuerpflichtig {
-    static int mitglnr = 0;
+    int mitglnr = 0;
     Einwohner[] mitglieder;
     Finanzamt fa = null;
 
@@ -39,12 +37,10 @@ public abstract class Unternehmen extends Gruppe implements Steuerpflichtig {
             if (neuesMitglied instanceof Buerger
                     || neuesMitglied instanceof Superheld) {
                 if (mitglnr > 0) {
-                    Object newArray = Array.newInstance(
-                            mitglieder.getClass().getComponentType(),
-                            Array.getLength(mitglieder) + 1);
-                    System.arraycopy(mitglieder, 0, newArray, 0,
+                    Einwohner[] temp = new Einwohner[mitglnr + 1];
+                    System.arraycopy(mitglieder, 0, temp, 0,
                             mitglieder.length);
-                    mitglieder = (Einwohner[]) newArray;
+                    mitglieder = (Einwohner[]) temp;
                     mitglieder[mitglnr] = neuesMitglied;
                     ++mitglnr;
                     System.out.println("neues Mitglied: "

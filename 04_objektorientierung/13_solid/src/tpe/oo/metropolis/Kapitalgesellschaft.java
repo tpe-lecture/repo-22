@@ -1,21 +1,22 @@
 package tpe.oo.metropolis;
+
 /**
- * Personengesellschaft, die Bürger oder Superhelden als Mitglieder hat.
- * Sie bekommt auch Steuererleichterung.
+ * Erstellt eine Kapitalgesellschaft.
  *
  */
-public class Personengesellschaft extends Unternehmen {
+public class Kapitalgesellschaft extends Unternehmen {
     int einkommen;
 
     /**
      *
-     * @param name Name
+     * @param name Name des Unternehmens.
      * @param einkommen Einkommen
      * @param mitglied Mitglieder
      */
-    Personengesellschaft(String name, int einkommen, Einwohner ... mitglied) {
+    Kapitalgesellschaft(String name, int einkommen, Einwohner ... mitglied) {
         super(name, einkommen, mitglied);
     }
+
 
     @Override
     public int zahleSteuern() {

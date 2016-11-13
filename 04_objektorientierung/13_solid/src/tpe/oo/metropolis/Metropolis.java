@@ -57,25 +57,32 @@ public class Metropolis {
             + "$ Steuern eingesammelt" + "\n");
 
 
-        Personengesellschaft test = new Personengesellschaft("Test", 5,
+        Personengesellschaft pers = new Personengesellschaft("Test", 5,
                 einarr[2]);
-        System.out.println("neues Unternehmen" + test.getName());
-        test.addMitglied(einarr[1]);
-        test.getMitglieder();
-        System.out.println(test.getName() + " Einkommen: "
-                + test.getEinkommen());
-        System.out.println("Steuern: " + fm.calcSteuern(test));
-        test.setEinkommen(5400);
-        System.out.println(test.getName() + " Einkommen: "
-                + test.getEinkommen());
-        System.out.println("Steuern: " + fm.calcSteuern(test));
-        test.setEinkommen(1000000);
-        System.out.println(test.getName() + " Einkommen: "
-                + test.getEinkommen());
-        System.out.println("Steuern: " + fm.calcSteuern(test));
+        System.out.println("neues Unternehmen" + pers.getName());
+        pers.addMitglied(einarr[1]);
+        pers.getMitglieder();
+        System.out.println(pers.getName() + " Einkommen: "
+                + pers.getEinkommen());
+        System.out.println("Steuern: " + fm.calcSteuern(pers));
+        pers.setEinkommen(5400);
+        System.out.println(pers.getName() + " Einkommen: "
+                + pers.getEinkommen());
+        System.out.println("Steuern: " + fm.calcSteuern(pers));
+        pers.setEinkommen(1000000);
+        System.out.println(pers.getName() + " Einkommen: "
+                + pers.getEinkommen());
+        System.out.println("Steuern: " + fm.calcSteuern(pers));
 
         System.out.println("\n" + fm.steuernausgeben()
             + "$ Steuern eingesammelt" + "\n");
+
+        System.out.println("neue Kapitalges. mit gleichem Einkommen");
+        Kapitalgesellschaft kap = new Kapitalgesellschaft("AG", pers.getEinkommen(), einarr[2]);
+        kap.getMitglieder();
+        fm.calcSteuern(kap);
+        System.out.println("Steuern der Personengesellschaft: " + fm.calcSteuern(pers));
+        System.out.println("Steuern der Kapitalgesellschaft: " + fm.calcSteuern(kap));
 
         Superheld profX = new Superheld("Proffessor X", "Mensch",
                 new Superkraft("Gedankenkontrolle"),
@@ -100,7 +107,5 @@ public class Metropolis {
         salesch.verurteilen(magneto);
         salesch.setKorrupt(true);
         salesch.verurteilen(magneto);
-
-
     }
 }

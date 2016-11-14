@@ -27,11 +27,10 @@ public final class Zahlenraten {
      * Hauptmethode.
      *
      * @param args Kommandozeilenargumente
-     * @throws NumberFormatException Fehler bei der Zahlenkovertierung
      * @throws IOException I/O-Fehler
      */
     public static void main(String[] args)
-            throws NumberFormatException, IOException {
+            throws IOException {
 
         // zu ratende Zahl bestimmen
         int zahl = new Random().nextInt(100) + 1;
@@ -39,19 +38,25 @@ public final class Zahlenraten {
         int versuche = 0;
 
         while (true) {
-            System.out.print("Bitte geben Sie eine Zahl ein: ");
-            int geraten  = Integer.parseInt(readNumber());
-            versuche++;
+            try {
+                System.out.print("Bitte geben Sie eine Zahl ein: ");
+                int geraten  = Integer.parseInt(readNumber());
+                versuche++;
 
-            if (geraten < zahl) {
-                System.out.println("Zu niedrig");
+                if (geraten < zahl) {
+                    System.out.println("Zu niedrig");
+                }
+                else if (geraten > zahl) {
+                    System.out.println("Zu hoch.");
+                }
+                else {
+                    System.out.printf("Richtig in %d Versuchen", versuche);
+                    break;
+                }
             }
-            else if (geraten > zahl) {
-                System.out.println("Zu hoch.");
-            }
-            else {
-                System.out.printf("Richtig in %d Versuchen", versuche);
-                break;
+            catch (NumberFormatException ex) {
+                System.out.println("bitte korrekte Zahl eingeben");
+
             }
         }
     }

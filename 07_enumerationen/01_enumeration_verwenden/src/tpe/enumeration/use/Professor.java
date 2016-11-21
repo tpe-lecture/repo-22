@@ -22,7 +22,7 @@ public class Professor extends AnimatedSprite {
      * @param startPoint Start-Position
      */
     public Professor(Board board, Point startPoint) {
-        super(board, startPoint, BoundaryPolicy.NONE,
+        super(board, startPoint, BoundaryPolicy.STOP,
                 new AnimatedImage(50, 9,
                         "assets/professor_left"));
         velocity.setVelocity(Direction.WEST, SPRITE_SPEED);

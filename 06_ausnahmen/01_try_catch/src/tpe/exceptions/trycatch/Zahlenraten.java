@@ -29,8 +29,7 @@ public final class Zahlenraten {
      * @param args Kommandozeilenargumente
      * @throws IOException I/O-Fehler
      */
-    public static void main(String[] args)
-            throws IOException {
+    public static void main(String[] args) throws IOException {
 
         // zu ratende Zahl bestimmen
         int zahl = new Random().nextInt(100) + 1;
@@ -38,13 +37,15 @@ public final class Zahlenraten {
         int versuche = 0;
 
         while (true) {
+            String read = "";
             try {
                 System.out.print("Bitte geben Sie eine Zahl ein: ");
-                int geraten  = Integer.parseInt(readNumber());
+                read = readNumber();
+                int geraten = Integer.parseInt(read);
                 versuche++;
 
                 if (geraten < zahl) {
-                    System.out.println("Zu niedrig");
+                    System.out.println("Zu niedrig\n");
                 }
                 else if (geraten > zahl) {
                     System.out.println("Zu hoch.");
@@ -55,8 +56,8 @@ public final class Zahlenraten {
                 }
             }
             catch (NumberFormatException ex) {
-                System.out.println("bitte korrekte Zahl eingeben");
-
+                System.err.println("bitte korrekte Zahl eingeben");
+                System.out.println();
             }
         }
     }

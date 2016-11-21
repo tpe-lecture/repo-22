@@ -10,6 +10,7 @@ import de.smits_net.games.framework.board.Board;
 /**
  * Spielfeld.
  */
+@SuppressWarnings("serial")
 public class GameBoard extends Board {
 
     /** Sprite, das durch das Bild läuft. */

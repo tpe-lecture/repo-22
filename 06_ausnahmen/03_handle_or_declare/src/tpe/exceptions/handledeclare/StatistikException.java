@@ -6,6 +6,11 @@ package tpe.exceptions.handledeclare;
 public class StatistikException extends Exception {
 
     /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    /**
      * Legt eine neue Ausnahme an.
      */
     public StatistikException() {

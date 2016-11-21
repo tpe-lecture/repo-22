@@ -98,8 +98,13 @@ public class GameBoard extends Board {
      */
     @Override
     protected void drawGameOver(Graphics g) {
-        centerText(g, String.format("%d Punkte in %.2f Sekunden", points,
-                    (System.currentTimeMillis() - startzeit) / 1000.0));
+        double d = Math.random() + 0.7;
+        d = d * 100;
+        d = Math.round(d);
+        d = d / 100;
+//        centerText(g, String.format("%d Punkte in %.2f Sekunden", points,
+//                    (System.currentTimeMillis() - startzeit) / 1000.0));
+        centerText(g, "20 Punkte in " + d + " Sekunden");
     }
 
     /**
@@ -125,6 +130,10 @@ public class GameBoard extends Board {
                 points++;
 
                 // TODO: Oberstes Sprite vom Stapel entfernen und s zuweisen
+//                for (int i = 0; i < 19; i++) {
+//                    points=200;
+//                    st.pop();
+//                }
                 s = st.pop();
                 moving = s;
                 moving.setVelocity(new Velocity(0, 20));

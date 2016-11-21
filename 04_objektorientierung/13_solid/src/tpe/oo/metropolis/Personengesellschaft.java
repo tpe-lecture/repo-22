@@ -17,6 +17,7 @@ public class Personengesellschaft extends Unternehmen {
         super(name, einkommen, mitglied);
     }
 
+
     @Override
     public int zahleSteuern() {
         return Steuerberater.betrag(this);

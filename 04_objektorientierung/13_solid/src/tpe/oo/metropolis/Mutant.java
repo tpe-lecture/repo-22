@@ -34,6 +34,7 @@ public abstract class Mutant extends Einwohner {
         return mutation;
     }
 
+
     /**
      * Setzt die Mutation.
      * @param mutation Mutation

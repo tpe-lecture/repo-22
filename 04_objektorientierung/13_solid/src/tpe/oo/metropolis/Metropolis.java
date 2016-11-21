@@ -10,9 +10,6 @@ public class Metropolis {
      * @param args nüscht
      */
     public static void main(String[] args) {
-        final String ANSI_WHITE = "\u001B[37m";
-        final String ANSI_RESET = "\u001B[0m";
-        final String ANSI_RED = "\u001B[31m";
 
         Finanzamt fm = Finanzamt.createFA();
         Einwohner[] einarr = new Einwohner[10];
@@ -111,7 +108,5 @@ public class Metropolis {
         salesch.verurteilen(magneto);
         salesch.setKorrupt(true);
         salesch.verurteilen(magneto);
-
-        System.out.println(ANSI_RED + "This text is red!" + ANSI_RESET);
     }
 }

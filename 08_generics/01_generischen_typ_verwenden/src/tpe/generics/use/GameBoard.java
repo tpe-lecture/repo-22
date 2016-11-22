@@ -19,7 +19,7 @@ import de.smits_net.games.framework.sprite.Velocity;
  */
 @SuppressWarnings("serial")
 public class GameBoard extends Board {
-
+    final boolean cheat = false;
     /** Münzstapel. */
     Stack<Sprite> st = new Stack<>();
 
@@ -102,9 +102,12 @@ public class GameBoard extends Board {
         d = d * 100;
         d = Math.round(d);
         d = d / 100;
-//        centerText(g, String.format("%d Punkte in %.2f Sekunden", points,
-//                    (System.currentTimeMillis() - startzeit) / 1000.0));
+        if(!cheat){
+        centerText(g, String.format("%d Punkte in %.2f Sekunden", points,
+                    (System.currentTimeMillis() - startzeit) / 1000.0));
+        } else {
         centerText(g, "20 Punkte in " + d + " Sekunden");
+        }
     }
 
     /**
@@ -129,11 +132,6 @@ public class GameBoard extends Board {
             if (s.intersects(new Point(e.getX(), e.getY()))) {
                 points++;
 
-                // TODO: Oberstes Sprite vom Stapel entfernen und s zuweisen
-//                for (int i = 0; i < 19; i++) {
-//                    points=200;
-//                    st.pop();
-//                }
                 s = st.pop();
                 moving = s;
                 moving.setVelocity(new Velocity(0, 20));

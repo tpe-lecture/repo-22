@@ -19,7 +19,7 @@ import de.smits_net.games.framework.sprite.Velocity;
  */
 @SuppressWarnings("serial")
 public class GameBoard extends Board {
-    final boolean cheat = false;
+    final boolean cheat = true;
     /** Münzstapel. */
     Stack<Sprite> st = new Stack<>();
 

@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Random;
 
 import de.smits_net.games.framework.board.Board;
@@ -25,6 +27,16 @@ public class GameBoard extends Board {
 
         // Alien initialisieren
         alien = new Alien(this, new Point(800, 50 + new Random().nextInt(100)));
+
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (alien.intersects(new Point(e.getX(), e.getY()))) {
+                    alien.explode();
+                }
+            }
+
+        });
     }
 
     /**

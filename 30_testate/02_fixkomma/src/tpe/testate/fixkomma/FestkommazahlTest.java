@@ -119,7 +119,7 @@ public class FestkommazahlTest {
         result = subtract(new Festkommazahl(0, 33), new Festkommazahl(0, 22));
         assertEquals("0,11", result.toString());
 
-        result = subtract(new Festkommazahl(33, 00), new Festkommazahl(22, 00));
-        assertEquals("11,00", result.toString());
+        result = subtract(new Festkommazahl(33, 00), new Festkommazahl(33, 00));
+        assertEquals("0,00", result.toString());
     }
 }

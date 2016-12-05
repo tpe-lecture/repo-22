@@ -116,8 +116,7 @@ public class Waehrung {
             if (other.name != null) {
                 return false;
             }
-        }
-        else if (!name.equals(other.name)) {
+        } else if (!name.equals(other.name)) {
             return false;
         }
         if (kurs != other.kurs) {
@@ -127,8 +126,7 @@ public class Waehrung {
             if (other.kuerzel != null) {
                 return false;
             }
-        }
-        else if (!kuerzel.equals(other.kuerzel)) {
+        } else if (!kuerzel.equals(other.kuerzel)) {
             return false;
         }
         return true;

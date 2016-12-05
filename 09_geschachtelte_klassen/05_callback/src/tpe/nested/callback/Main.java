@@ -21,9 +21,11 @@ public class Main {
         NumberSelector s = new NumberSelector();
 
         // TODO: Gerade Zaheln filtern
-        int[] gerade = null;
+//        int[] gerade =  s.filter(new Predicate<int>{
+//            accept(Zahlen);
+//        }, new int[] {2,4,6});
 
-        System.out.println(Arrays.toString(gerade));
+//        System.out.println(Arrays.toString(gerade));
 
         // TODO: Ungerade Zaheln filtern
         int[] ungerade = null;

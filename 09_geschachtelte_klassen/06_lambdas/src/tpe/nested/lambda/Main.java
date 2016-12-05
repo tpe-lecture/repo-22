@@ -17,17 +17,12 @@ public class Main {
      * @param args Kommandozeileargumente.
      */
     public static void main(String[] args) {
-
         NumberSelector s = new NumberSelector();
 
-        // TODO: Gerade Zaheln filtern
-        int[] gerade = null;
-
+        int[] gerade = s.filter((i) -> i%2 == 0, ZAHLEN);
         System.out.println(Arrays.toString(gerade));
 
-        // TODO: Ungerade Zaheln filtern
-        int[] ungerade = null;
-
+        int[] ungerade = s.filter((i) -> i%2 == 1, ZAHLEN);
         System.out.println(Arrays.toString(ungerade));
 
     }

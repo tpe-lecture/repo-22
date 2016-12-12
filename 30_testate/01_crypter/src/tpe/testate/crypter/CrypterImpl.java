@@ -1,7 +1,7 @@
 package tpe.testate.crypter;
 
 /**
- * Klasse zur sicheren Ver- und Entschlüsselung von Hochsicherheitsgeheimnissen.
+ * Klasse zur sicheren Ver- und EntschlÃ¼sselung von Hochsicherheitsgeheimnissen.
  */
 public class CrypterImpl implements Crypter {
   String input;
@@ -12,14 +12,14 @@ public class CrypterImpl implements Crypter {
     public String encrypt(String input) throws IllegalArgumentException {
     output = "";
     input = input.toLowerCase();
-    for (int j = 0; j < input.length(); j++) {          //für jeden zu verschlüsselnden Buchstaben:
+    for (int j = 0; j < input.length(); j++) {          //fÃ¼r jeden zu verschlÃ¼sselnden Buchstaben:
       char temp = input.charAt(j);
       int ascii = temp;
       if ((ascii >= 97 && ascii <= 122)                 // Kleine Buchstaben
              || (ascii >= 48 && ascii <= 57)            // Zahlen
              || ascii == 32) {                          //Leerzeichen
 
-        output = output + aendern(temp);                //Möglicherweise geändertes Zeichen anhängen
+        output = output + aendern(temp);                //MÃ¶glicherweise geÃ¤ndertes Zeichen anhÃ¤ngen
       } else {
         throw new IllegalArgumentException();
       }
@@ -29,7 +29,7 @@ public class CrypterImpl implements Crypter {
 
   @Override
     public String decrypt(String input) throws IllegalArgumentException {
-    if (input.equals(input.toLowerCase())) {                //falls sich nichts ändert,
+    if (input.equals(input.toLowerCase())) {                //falls sich nichts Ã¤ndert,
       return encrypt(input);                                    //sind alle Buchstaben klein.
     } else {
       throw new IllegalArgumentException();
@@ -37,7 +37,7 @@ public class CrypterImpl implements Crypter {
   }
 
   /**
-  * Ändert alle angegebenen Buchstaben auf den dazugehöhrigen Partner.
+  * Ã„ndert alle angegebenen Buchstaben auf den dazugehÃ¶hrigen Partner.
   *  <code>
   *    e -> 3
   *    3 -> e
@@ -50,8 +50,8 @@ public class CrypterImpl implements Crypter {
   *    t -> 7
   *    7 -> t
   *  </code>
-  * @param ch zu überprüfender Buchstabe
-  * @return möglicherweise geänderter Buchstabe
+  * @param ch zu Ã¼berprÃ¼fender Buchstabe
+  * @return mÃ¶glicherweise geÃ¤nderter Buchstabe
    */
   char aendern(char ch) {
     switch (ch) {

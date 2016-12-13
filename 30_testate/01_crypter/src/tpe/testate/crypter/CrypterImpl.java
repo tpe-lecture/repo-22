@@ -31,8 +31,6 @@ public class CrypterImpl implements Crypter {
 
 				output = output + aendern(temp); // Moeglicherweise gaendertes
 													// Zeichen anhaengen
-			} else {
-				throw new IllegalArgumentException();
 			}
 		}
 		return output;
